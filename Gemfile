@@ -5,7 +5,8 @@ gem 'rails', '3.2.17'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
 gem 'sass', '3.2.10'
 
 # grab foundation
@@ -39,3 +40,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'rails_12factor', group: :production
