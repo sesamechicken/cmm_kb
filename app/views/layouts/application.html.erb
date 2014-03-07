@@ -7,14 +7,32 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+  <header>
+    <div class="large-3 columns"><%= link_to(image_tag("logo.png"), root_url ) %></div>
+    <div class="large-9 columns">
+        <div class="header-controls">
+        <ul class="button-group">
+         <li><a href="#" class="tiny button success">Login</a></li>
+         <li><%= link_to "New Article", new_article_path, class: "tiny button"  %></li>
+         <li><%= link_to "New Category", new_category_path, class: "tiny button"  %></li>
+        </ul>
+        </div>
+    </div>
+  </header>
 
-
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+<div class="large-2 columns">
+  Global left menu
+</div>
+<div class="large-10 columns">
+  <%= yield %>
+</div>
+<%= render partial: "categories/footer" %>
+  <%= javascript_include_tag "application" %>
   </body>
 </html>

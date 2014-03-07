@@ -1,25 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+<div class="row panel">
+	<% if flash[:notice] %>
+   	 <div class="alert-box notice"><%= flash[:notice] %></div>
+  	<% end %>
+	<h2><%= @article.title %></h2>
 
-<p>
-  <b>Body:</b>
-  <%= @article.body %>
-</p>
+	<p>
+	  <%= @article.body %>
+	</p>
 
-<p>
-  <b>Public:</b>
-  <%= @article.public %>
-</p>
+	<p>
+	  <b>Tags:</b> <%= @article.tags %> <br>
+	  <b>Public:</b> <%= @article.public %> <br>
+	  <b>Author:</b> <em><%= @article.author %></em> <b>Revisions:</b> <%= @article.revisions %><br>
+	  <b>Created</b> <%= @article.created_at %> <br>
+	  <b>Revised:</b> <%= @article.updated_at %>
+	</p>
 
-<p>
-  <b>Author:</b>
-  <%= @article.author %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+	<div class="article-controls">
+	<%= link_to 'Back', articles_path, class: "tiny secondary button" %>
+	<%= link_to 'Edit', edit_article_path(@article), class: 'tiny button' %> 
+	<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'tiny alert button' %>
+	</div>
+</div>
