@@ -28,7 +28,9 @@ CmmKb::Application.routes.draw do
   #     end
   #   end
 resources :categories
-match 'search:query' => 'searches#index'
+get 'articles/search'
+post 'articles/search'
+
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

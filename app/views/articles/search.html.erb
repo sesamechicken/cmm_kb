@@ -1,0 +1,16 @@
+<div class="search-result-wrapper">
+<h4>Found <%= pluralize(@articles.count, 'result') %></h4>
+
+<ul>
+	<% @articles.each do |article| %>
+		<li class="search-result">
+			<div class="large-12 columns">
+				<h5><%= link_to article.title, article %></h5>
+				<p><%= truncate(article.body, length: 50) %> <br>
+				<em class="article-meta">Updated <%= article.updated_at %></em></p>
+			</div>
+		</li>
+	<% end %>
+</ul>
+<br style="clear:both;">
+</div>

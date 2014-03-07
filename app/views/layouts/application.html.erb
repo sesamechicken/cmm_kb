@@ -26,16 +26,7 @@
     <!-- BEGIN Search -->
     <div class="row">
     <div class="small-8 large-5 centered">
-      <form action="/search" method="GET"><div class="row collapse">
-      
-         <div class="small-10 columns">
-          <input type="search" name="search_string" placeholder="Search">
-        </div>
-        <div class="small-2 columns">
-          <input type="submit" class="button postfix" value="Search">
-        </div>
-      
-      </div></form>
+     <%= render partial: 'articles/search' %>
     </div>
     <!-- END Search -->
   </header>
@@ -46,7 +37,6 @@
 <div class="large-10 columns">
   <%= yield %>
 </div>
-<%= render partial: "categories/footer" %>
   <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -47,6 +47,18 @@ margin-bottom: 2em;
 .article-body{
 	margin: 1em 0 1em;
 }
+.search-result-wrapper{
+	background-color: #fff;
+	padding: 1em;
+}
+.search-result {
+	list-style: none;
+	clear: both;
+}
+.search-result h5{
+	margin-bottom: -3px;
+}
+
 
 .footer-wrapper{
 	background-color: #fff;
