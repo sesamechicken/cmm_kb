@@ -1,4 +1,3 @@
-
 <div class="row panel">
 	<% if flash[:notice] %>
    	 <div class="alert-box notice"><%= flash[:notice] %></div>
@@ -9,17 +8,18 @@
 	  <%= @article.body %>
 	</p>
 
+	<div class="row">
+		<div class="large-3 columns"><b>Tags:</b> <%= @article.tags %></div>
+		<div class="large-3 columns"><b>Created:</b> <%= @article.created_at %></div>
+		<div class="large-3 columns"><b>Revised:</b> <%= @article.updated_at %></div>
+		<div class="large-3 columns"><b>Revisions:</b> <%= @article.revisions %></div>
+	</div>
 	<p>
-	  <b>Tags:</b> <%= @article.tags %> <br>
 	  <b>Public:</b> <%= @article.public %> <br>
-	  <b>Author:</b> <em><%= @article.author %></em> <b>Revisions:</b> <%= @article.revisions %><br>
-	  <b>Created</b> <%= @article.created_at %> <br>
-	  <b>Revised:</b> <%= @article.updated_at %>
 	</p>
-
 	<div class="article-controls">
-	<%= link_to 'Back', articles_path, class: "tiny secondary button" %>
-	<%= link_to 'Edit', edit_article_path(@article), class: 'tiny button' %> 
-	<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'tiny alert button' %>
+		<%= link_to 'Back', articles_path, class: "tiny secondary button" %>
+		<%= link_to 'Edit', edit_article_path(@article), class: 'tiny button' %> 
+		<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'tiny alert button' %>
 	</div>
 </div>

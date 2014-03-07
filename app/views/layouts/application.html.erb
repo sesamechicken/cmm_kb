@@ -11,7 +11,6 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
   <header>
     <div class="large-3 columns"><%= link_to(image_tag("logo.png"), root_url ) %></div>
@@ -24,6 +23,21 @@
         </ul>
         </div>
     </div>
+    <!-- BEGIN Search -->
+    <div class="row">
+    <div class="small-8 large-5 centered">
+      <form action="/search" method="GET"><div class="row collapse">
+      
+         <div class="small-10 columns">
+          <input type="search" name="search_string" placeholder="Search">
+        </div>
+        <div class="small-2 columns">
+          <input type="submit" class="button postfix" value="Search">
+        </div>
+      
+      </div></form>
+    </div>
+    <!-- END Search -->
   </header>
 
 <div class="large-2 columns">
