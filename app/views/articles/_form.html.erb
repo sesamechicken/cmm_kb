@@ -17,8 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :body %>
-   <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'uk'} %>
-    <%= f.cktext_area :body %>
+    <%= f.text_area :body, {cols: 40, rows: 5} %>
   </div>
   <div class="field">
     <%= f.label :public %>
