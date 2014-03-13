@@ -6,6 +6,9 @@ gem 'rails', '3.2.17'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
+# editor
+gem 'epic-editor-rails'
+
 group :production do
   gem 'rails_12factor'
   gem 'pg'

@@ -14,5 +14,26 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+//= require 'epiceditor' 
 
-$(function(){ $(document).foundation(); });
+
+$(function(){ 
+	$(document).foundation(); 
+
+    var editor = new EpicEditor(opts);
+    editor.load(function () {
+	  console.log("Editor loaded.")
+	});
+
+$text = $('#article_body').text();
+editor.importFile(null, $text);
+editor.load();
+
+var opts = {
+  container: 'epiceditor',
+  textarea: 'article_body',
+  focusOnLoad: true
+}
+
+});
+
