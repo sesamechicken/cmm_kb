@@ -1,4 +1,5 @@
 CmmKb::Application.routes.draw do
+
   resources :articles
 
 

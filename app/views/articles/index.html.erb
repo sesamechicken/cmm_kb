@@ -1,5 +1,8 @@
-<div class="row">
-  <h1>Knowledgebase Articles</h1>
+
+
+
+<div class="row article-meta">
+  <p><%= pluralize(@articles.count, 'total article') %> in the kb.</p>
 </div>
 
 <% @articles.each do |article| %>
@@ -9,10 +12,8 @@
   </div>
   <div class="large-10 columns">
     <h1><%= link_to article.title, article %></h1>
-    <div class="article-meta">Category: <%= link_to article.category, category_path(article.category) %> | Created by: <em><%= article.author %></em> | Last updated: <%= article.updated_at %> <br>
+    <div class="article-meta">Category: <%= link_to Category.find(article.category).title, category_path(article.category) %> | Created by: <em><%= article.author %></em> | Last updated: <%= article.updated_at %> <br>
     Tags: <%= article.tags  %></div>
-
-
 
     <div class="article-body"><%= truncate(article.body, length: 100) %></div>
   </div>

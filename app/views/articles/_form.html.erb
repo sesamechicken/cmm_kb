@@ -17,7 +17,8 @@
   </div>
   <div class="field">
     <%= f.label :body %>
-    <%= f.text_area :body, {cols: 40, rows: 5} %>
+   <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'uk'} %>
+    <%= f.cktext_area :body %>
   </div>
   <div class="field">
     <%= f.label :public %>
@@ -29,15 +30,23 @@
     <%= f.text_field :tags, {class: "large-3 columns"} %>
 
   </div>
+
   <div class="field">
     <%= f.label :author %>
     <%= f.text_field :author %>
   </div>
+  
   <div class="field">
     <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= collection_select(:article, :category, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
   </div>
+
   <div class="actions">
     <%= f.submit "Submit", class: "small button" %>
   </div>
+
+
+
+
+
 <% end %>
