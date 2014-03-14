@@ -86,8 +86,15 @@ header {
 	margin: 1em 0 1em;
 }
 .article-sidebar{
-	line-height: 2rem;
+	line-height: 3rem;
 	color: #8D8D8D;
+}
+.article-list-icon{ margin-top: 50%;}
+.sidebar-icon{
+	max-width: 28px;
+}
+.global-icon{
+	max-width: 16px;
 }
 .panel{background-color: #fff;}
 .search-result-wrapper{

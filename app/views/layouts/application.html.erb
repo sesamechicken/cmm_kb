@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CMM - <%= content_for?(:title) ? yield(:title) + " - Knowledgebase" : "Knowledgebase" %></title>
+<title>MySite - <%= content_for?(:title) ? yield(:title) + " - Knowledgebase" : "Knowledgebase" %></title>
 <%= stylesheet_link_tag    "application" %>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <%= javascript_include_tag "vendor/modernizr" %>
@@ -15,7 +15,8 @@
     <div class="large-3 columns">
       <div class="logo-wrapper">
       <%= link_to(image_tag("logo.png"), root_url ) %>  <br>
-      <%= link_to(image_tag("article-default.png", class: 'logo-book'), root_url ) %> Knowledgebase
+      <%= link_to(image_tag("article-default.png", class: 'logo-book'), root_url ) %>
+      <%= link_to("Knowledgebase", root_url) %>
       </div>
     </div>
     <div class="large-9 columns">
