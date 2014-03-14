@@ -1,24 +1,30 @@
 <div class="row panel">
 	<% if flash[:notice] %>
-   	 <div class="alert-box notice"><%= flash[:notice] %></div>
+   		<div class="alert-box notice"><%= flash[:notice] %></div>
   	<% end %>
-	<h2><%= @article.title %></h2>
+	
+	<h1><%= @article.title.titleize %></h1>
+	<span class="subheader">Created on <%= prettyTime(@article.created_at) %> by <em><%= @article.author %></em></span>
 
-	<p>
-	  <%= @article.body %>
-	</p>
-
+	<hr />
+	
 	<div class="row">
-		<div class="large-3 columns"><b>Tags:</b> <%= @article.tags %></div>
-		<div class="large-3 columns"><b>Created:</b> <%= @article.created_at %></div>
-		<div class="large-3 columns"><b>Revised:</b> <%= @article.updated_at %></div>
-		<div class="large-3 columns"><b>Revisions:</b> <%= @article.revisions %></div>
+		<div class="large-9 columns">
+			<%= markdown @article.body %>
+		</div>
+		<div class="large-3 columns article-sidebar">
+			<b>Created:</b> <%= prettyTime(@article.created_at) %> <br>
+			<b>Author:</b> <%= @article.author %> <br>
+			<b>Tags:</b> <%= @article.tags %> <br>
+			<b>Revised:</b> <%= prettyTime(@article.updated_at) %> <br>
+			<b>Revisions:</b> <%= @article.revisions %> <br>
+			<b>Public:</b> <%= @article.public %>
+		</div>
+
 	</div>
-	<p>
-	  <b>Public:</b> <%= @article.public %> <br>
-	</p>
-	<div class="article-controls">
-		<%= link_to 'Back', articles_path, class: "tiny secondary button" %>
+
+	<div class="article-controls center">
+		<!-- <%= link_to 'Back', articles_path, class: "tiny button" %> -->
 		<%= link_to 'Edit', edit_article_path(@article), class: 'tiny button' %> 
 		<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'tiny alert button' %>
 	</div>

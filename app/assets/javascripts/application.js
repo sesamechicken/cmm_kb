@@ -21,13 +21,5 @@ $(function(){
 	
 	$(document).foundation(); 
 
-	// For the markdown editor
-	var opts = {
-	  container: 'epiceditor',
-	  focusOnLoad: true
-	}
-	
-	var editor = new EpicEditor(opts).load();
-
 });
 

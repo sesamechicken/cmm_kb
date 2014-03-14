@@ -13,7 +13,10 @@
 <header>
   <div class="row">
     <div class="large-3 columns">
-      <%= link_to(image_tag("logo.png", class: 'logo'), root_url ) %> <h4><%= link_to(image_tag("article-default.png", class: 'logo-book'), root_url ) %> Knowledgebase</h4>
+      <div class="logo-wrapper">
+      <%= link_to(image_tag("logo.png"), root_url ) %>  <br>
+      <%= link_to(image_tag("article-default.png", class: 'logo-book'), root_url ) %> Knowledgebase
+      </div>
     </div>
     <div class="large-9 columns">
         <div class="header-controls">

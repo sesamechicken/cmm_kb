@@ -15,10 +15,10 @@
  */
 
 @import 'base/epiceditor';  
-@import 'preview/bartik';  
+/* @import 'preview/bartik';  */
 @import 'preview/github';  
 @import 'preview/preview-dark';  
-@import 'editor/epic-dark';  
+/* @import 'editor/epic-dark';  */
 @import 'editor/epic-light';  
  
  body{
@@ -52,6 +52,15 @@ header {
 	min-height: 100px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.logo-wrapper {
+	padding-top: 50px;
+	margin-bottom: -50px;
+	font-size: 20px;
+	color: #8F8F8F;
+}
+.logo-book{
+	max-width: 32px;
+}
 .header-controls{
 	float: right;
 }
@@ -76,7 +85,10 @@ header {
 .article-body{
 	margin: 1em 0 1em;
 }
-
+.article-sidebar{
+	line-height: 2rem;
+	color: #8D8D8D;
+}
 .panel{background-color: #fff;}
 .search-result-wrapper{
 	background-color: #fff;
@@ -97,6 +109,15 @@ header {
 .global-footer{
 
 }
-.logo-book{
-	max-width: 32px;
+
+
+@media screen 
+and (min-width : 320px) 
+and (max-width : 550px) {
+	.logo-wrapper {
+		padding-top: 0px;
+		margin-bottom: 15px;
+		font-size: 14px;
+		color: #8F8F8F;
+	}
 }
