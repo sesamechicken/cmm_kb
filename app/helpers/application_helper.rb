@@ -1,8 +1,13 @@
 module ApplicationHelper
-end
 
-def prettyTime(time)
-    return time.strftime("%d %b. %Y")
+    def prettyTime(time)
+        return time.strftime("%d %b. %Y")
+    end
+
+    def title(page_title)
+        content_for(:title){ page_title }
+    end
+
 end
 
 #markdown helper

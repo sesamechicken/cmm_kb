@@ -1,4 +1,4 @@
-
+<% title "Article" %>
 <%= form_for(@article) do |f| %>
   <% if @article.errors.any? %>
     <div id="error_explanation" class="alert-box alert">
@@ -40,7 +40,7 @@
     <%= f.label :category %>
     <%= collection_select(:article, :category, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit "Submit", :onclick => 'setEpicValue()', class: "small button" %>
   </div>

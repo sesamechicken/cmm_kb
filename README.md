@@ -1,1 +1,4 @@
-Test KB app in ruby on rails. By me.
+###App
+Proof of concept knowledgebase app in ruby on rails.
+
+- Editor is EpicEditor for using markdown syntax
