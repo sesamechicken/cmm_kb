@@ -18,22 +18,16 @@
 
 
 $(function(){ 
+	
 	$(document).foundation(); 
 
-    var editor = new EpicEditor(opts);
-    editor.load(function () {
-	  console.log("Editor loaded.")
-	});
-
-$text = $('#article_body').text();
-editor.importFile(null, $text);
-editor.load();
-
-var opts = {
-  container: 'epiceditor',
-  textarea: 'article_body',
-  focusOnLoad: true
-}
+	// For the markdown editor
+	var opts = {
+	  container: 'epiceditor',
+	  focusOnLoad: true
+	}
+	
+	var editor = new EpicEditor(opts).load();
 
 });
 

@@ -7,7 +7,8 @@ gem 'rails', '3.2.17'
 
 
 # editor
-gem 'epic-editor-rails'
+gem "epic-editor-rails", "~> 0.2.3"
+gem 'redcarpet'
 
 group :production do
   gem 'rails_12factor'

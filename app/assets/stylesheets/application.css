@@ -58,7 +58,7 @@ header {
 .main-content{
 	background-color: #f6f6f6;
 	padding: 1em;
-	height: 80%;
+	min-height: 80%;
 }
 
 .article-avatar{
