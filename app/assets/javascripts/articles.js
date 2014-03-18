@@ -4,6 +4,21 @@ $(function(){
 		var opts = {
 		  container: 'epiceditor',
 		  textArea: 'body_txt',
+		  basePath: '../../../../assets/',
+ -        clientSideStorage: true,
+ -        localStorageName: 'epiceditor',
+ -        useNativeFullscreen: true,
+ -        parser: marked,
+ -        file: {
+ -        name: 'epiceditor',
+ -        defaultContent: '',
+ -        autoSave: 100
+ -        },
+ -        theme: {
+ -        base: 'base/epiceditor.css',
+ -        preview: 'preview/github.css',
+ -        editor: 'editor/epic-light.css'
+ -        },
 		  focusOnLoad: true,
 		  autogrow: true
 		}
