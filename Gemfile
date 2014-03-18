@@ -11,10 +11,10 @@ gem "epic-editor-rails", "~> 0.2.3"
 gem 'redcarpet'
 
 gem 'sqlite3'
-#group :production do
-#  gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
 #  gem 'pg'
-#end
+end
 #group :development, :test do
 #  gem 'sqlite3'
 #end
