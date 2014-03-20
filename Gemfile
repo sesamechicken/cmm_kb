@@ -10,14 +10,13 @@ gem 'rails', '3.2.17'
 gem "epic-editor-rails", "~> 0.2.3"
 gem 'redcarpet'
 
-gem 'sqlite3'
 group :production do
   gem 'rails_12factor'
-#  gem 'pg'
+  gem 'pg'
 end
-#group :development, :test do
-#  gem 'sqlite3'
-#end
+group :development, :test do
+  gem 'sqlite3'
+end
 
 gem 'sass', '3.2.10'
 #gem 'taps'
