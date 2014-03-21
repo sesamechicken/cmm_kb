@@ -28,4 +28,4 @@ production:
   encoding: unicode
   database: cmm_kb_production
   pool: 5
-  username: deploy
+  username: aaronb
