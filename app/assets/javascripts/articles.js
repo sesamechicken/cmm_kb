@@ -1,9 +1,10 @@
 $(function(){ 
 	// For the markdown editor
 	if($('#epiceditor').length > 0){
+		console.log('in the if...');
 		var opts = {
 		    container: 'epiceditor',
-		    textArea: 'body_txt',
+		    textarea: 'article_body',
 		    basePath: '../../../../assets/',
 			clientSideStorage: true,
 			localStorageName: 'epiceditor',

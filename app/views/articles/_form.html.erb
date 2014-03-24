@@ -12,38 +12,48 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="row">
+    <div class="large-5 columns end">
     <%= f.label :title %>
     <%= f.text_field :title %>
+    </div>
   </div>
-  <div class="field" id="epiceditor">
+  
+  <div class="row" id="epiceditor">
     <%= f.label :body %>
-    <%= f.text_area :body, :id => 'body_txt', :cols => 40, :rows => 5 %>
+    <%= f.text_area :body, :id => 'body_txt', :cols => 40, :rows => 10 %>
   </div>
-  <div class="field">
-    <%= f.label :public %>
-    <%= f.check_box :public %>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <%= f.label :category %>
+      <%= collection_select(:article, :category, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
+    </div>
+    <div class="large-3 columns end">
+       <%= f.label :Visibility %>
+      <%= f.check_box :public %><%= f.label :public %>
+    </div>
   </div>
   
-  <div class="field">
-    <%= f.label :tags %> <span>Comma separated (e.g. <em>intranet, salesorder, updating</em>)</span>
-    <%= f.text_field :tags, {class: "large-3 columns"} %>
-
-  </div>
-
-  <div class="field">
-    <%= f.label :author %>
-    <%= f.text_field :author %>
+  <div class="row">
+     <div class="large-5 columns">
+      <%= f.label :tags %>
+      <%= f.text_field :tags, {class: "large-3 columns", placeholder: "Comma separated (e.g. intranet, salesorder, updating)"} %>
+      </div>
+      <div class="large-2 columns end">
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+      </div>
+    </div>
   </div>
   
-  <div class="field">
-    <%= f.label :category %>
-    <%= collection_select(:article, :category, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
+  <div class="row">
+    <div class="actions">
+    <%= f.submit "Submit", :onclick => 'setEpicValue()', class: "small success button" %>
+  </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Submit", :onclick => 'setEpicValue()', class: "small button" %>
-  </div>
+ 
 
   <%= f.hidden_field :body, :id => 'article_body'%>
 
