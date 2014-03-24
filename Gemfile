@@ -6,8 +6,7 @@ gem 'rails', '3.2.17'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-# editor
-#gem "epic-editor-rails", "~> 0.2.3"
+gem 'faker'
 
 #Parsing markdown syntax
 gem 'redcarpet'
