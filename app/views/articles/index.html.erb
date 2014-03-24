@@ -4,15 +4,13 @@
 
 <% @articles.each do |article| %>
 <div class="row panel">
-  <div class="large-1 columns center">
-    <div onclick="window.location = '<%= url_for article %>'">
-    <%= image_tag("icons/icon-article.png", class: "article-list-icon") %>
-    </div>
-  </div>
-  <div class="large-11 columns">
+  <div class="large-12 columns">
     <h1><%= link_to article.title, article %></h1>
-    <div class="article-meta"><%= image_tag("icons/icon-category.png", class: "global-icon") %> Category: <%= link_to Category.find(article.category).title, category_path(article.category), class: "round label success" %> | <%= image_tag("icons/icon-user.png", class: "global-icon") %> Created by: <em><%= article.author %></em> | <%= image_tag("icons/icon-update.png", class: "global-icon") %> Last updated: <%= prettyTime(article.updated_at) %> <br>
-    <!-- Tags: <%= article.tags  %> -->
+    <div class="row">
+      <div class="article-meta">
+      <%= image_tag("icons/icon-category.png", class: "global-icon") %> Category: <%= link_to Category.find(article.category).title, category_path(article.category), class: "round label success" %> | <%= image_tag("icons/icon-user.png", class: "global-icon") %> Created by: <em><%= article.author %></em> | <%= image_tag("icons/icon-update.png", class: "global-icon") %> Last updated: <%= prettyTime(article.updated_at) %> <br>
+      <!-- Tags: <%= article.tags  %> -->
+      </div>
     </div>
 
     <div class="article-body"><%= truncate(article.body, length: 200) %></div>

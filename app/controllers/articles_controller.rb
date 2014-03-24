@@ -74,6 +74,7 @@ end
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
+        @article.increment!(:revisions)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
