@@ -1,10 +1,29 @@
 <div class="row">
 <%= link_to 'New Category', new_category_path, class: 'tiny button' %>
-<ul>
-<% @categories.each do |category| %>
-<li><%= category.title %></li>
+	<div class="large-8 columns small-centered">
+	
+	<table width="100%">
+		<thead>
+			<tr>
+				<th>Category</th>
+				<th>Article count</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @categories.each do |category| %>
+				<tr>
+					<td><%= link_to category.title, category %></td>
+					<td><%= category.articles.count %></td>
+					<td>
+						<%= link_to edit_category_path(category) do %><span class="tiny secondary button"><%= image_tag("icons/icon-edit.png", class: 'global-icon') %> Edit</span><% end %> 
+						<%= link_to category, method: :delete, data: { confirm: 'Are you sure?' } do %><span class="tiny alert button"><%= image_tag("icons/icon-delete.png", class: 'global-icon') %> Delete</span><% end %> </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 
-<% end %>
-</ul>
+	</div>
+
 </div>
 

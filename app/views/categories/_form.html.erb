@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="row">
+    <div class="large-3 small-centered columns">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :Visibility %>
+      <%= f.check_box :public %><%= f.label :public %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :public %><br />
-    <%= f.check_box :public %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions center">
+    <%= f.submit "Submit", class: 'small button' %>
   </div>
 <% end %>
