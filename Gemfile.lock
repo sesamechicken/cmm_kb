@@ -37,8 +37,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    epic-editor-rails (0.2.3)
-      railties (>= 3.2, < 5.0)
     erubis (2.7.0)
     execjs (2.0.2)
     foundation-rails (5.2.1.0)
@@ -115,7 +113,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  epic-editor-rails (~> 0.2.3)
   foundation-rails
   jquery-rails
   pg

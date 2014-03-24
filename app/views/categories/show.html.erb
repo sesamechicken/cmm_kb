@@ -1,1 +1,23 @@
-Yo
+<% title @category.title %>
+<div class="row">
+	<h1><%= @category.title %> <span class="round label article-header-count-badge"><%= @category.articles.count %></span></h1>
+	<p>Showing articles under category <em class="serif"><%= @category.title %></em>.</p>
+</div>
+
+<% @category.articles.each do |article| %>
+	<div class="row panel">
+	  <div class="large-12 columns">
+	    <div class="row"><h1><%= link_to article.title, article %></h1></div>
+	    <div class="row">
+	      <div class="article-meta">
+	      <%= image_tag("icons/icon-category.png", class: "global-icon") %> Category: <%= link_to article.category.title, category_path(article.category), class: "round label success" %> | <%= image_tag("icons/icon-user.png", class: "global-icon") %> Created by: <em><%= article.author %></em> | <%= image_tag("icons/icon-update.png", class: "global-icon") %> Last updated: <%= article.updated_at = Date.today ? "Today" : article.updated_at %><br>
+	      <!-- Tags: <%= article.tags  %> -->
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="article-body"><%= truncate(article.body, length: 200) %></div>
+	    </div>
+	  </div>
+	</div>
+
+<% end %>

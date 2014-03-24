@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(:version => 20140313182040) do
     t.text     "body"
     t.boolean  "public"
     t.string   "author"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.datetime "date"
-    t.string   "category"
+    t.integer  "category_id"
     t.string   "tags"
     t.integer  "revisions"
   end

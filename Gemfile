@@ -7,7 +7,9 @@ gem 'rails', '3.2.17'
 
 
 # editor
-gem "epic-editor-rails", "~> 0.2.3"
+#gem "epic-editor-rails", "~> 0.2.3"
+
+#Parsing markdown syntax
 gem 'redcarpet'
 
 group :production do

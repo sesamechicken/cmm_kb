@@ -34,13 +34,13 @@ p a,
 p a:link,
 p a:active,
 p a:visited{ 
-	color: rgb(0, 137, 190);
+	color: #45548f;
 }
 div a,
 div a:link,
 div a:active,
 div a:visited{ 
-	color: rgb(0, 137, 190);
+	color: #45548f;
 }
 .button { color: rgb(255,255,255)!important; }
 .tiny.button { color: rgb(255,255,255)!important; }
@@ -71,6 +71,8 @@ header {
 	min-height: 80%;
 }
 
+
+
 .article-avatar{
 	width: 100px;
 	height: 100px;
@@ -91,6 +93,12 @@ header {
 	color: #8D8D8D;
 }
 .article-list-icon{ margin-top: 50%;}
+.article-header-count-badge{
+	margin-top: -20px;
+	display: inline-table;
+}
+
+.serif{ font-family: 'Georgia', Times, serif;}
 .sidebar-icon{
 	max-width: 28px;
 }

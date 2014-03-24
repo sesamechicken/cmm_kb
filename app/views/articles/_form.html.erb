@@ -26,8 +26,8 @@
 
   <div class="row">
     <div class="large-3 columns">
-      <%= f.label :category %>
-      <%= collection_select(:article, :category, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
+      <%= f.label :category_id %>
+      <%= collection_select(:article, :category_id, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
     </div>
     <div class="large-3 columns end">
        <%= f.label :Visibility %>
