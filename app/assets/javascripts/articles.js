@@ -32,3 +32,14 @@ function setEpicValue(){
 	contents = editor.getElement('editor').body.innerText; // returns contents
 	$('#article_body').val(contents);
 }
+
+
+
+function addCategory(){
+	var new_cat = $('#new_cat').val();
+	$.post('/categories#create', {'category[title]': new_cat}, function(data){
+		// console.log(data);
+		$('#article_category_id').append('<option value="'+ data.id +'" selected>'+ new_cat +'</option>')
+	}, 'json');
+	
+}
