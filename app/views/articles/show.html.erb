@@ -9,12 +9,6 @@
 	<span class="subheader">Created on <%= prettyTime(@article.created_at) %> by <em><%= @article.author %></em></span>
 
 	<hr />
-	
-<h1>
-<%= prettyTime(@article.updated_at)%>
-	<%= prettyTime(@article.updated_at) == prettyTime(Date.today) ? "Today" : prettyTime(@article.updated_at) %>
-
-</h1>
 
 	<div class="row">
 		<div class="large-9 columns">
@@ -24,9 +18,12 @@
 			<%= image_tag("icons/icon-category.png", class: "sidebar-icon") %> <b>Category:</b> <%= link_to Category.find(@article.category).title, category_path(@article.category), class: 'label round success' %> <br>
 			<%= image_tag("icons/icon-clock.png", class: "sidebar-icon") %> <b>Created:</b> <%= prettyTime(@article.created_at) == prettyTime(Date.today) ? "Today" : prettyTime(@article.created_at) %> <br>
 			<%= image_tag("icons/icon-user.png", class: "sidebar-icon") %> <b>Author:</b> <%= @article.author %> <br>
-			<%= image_tag("icons/icon-tag.png", class: "sidebar-icon") %> <b>Tags:</b> <%= @article.tags %> <br>
-			<%= image_tag("icons/icon-update.png", class: "sidebar-icon") %> <b>Revised:</b> <%= prettyTime(@article.updated_at) == prettyTime(Date.today) ? "Today" : prettyTime(@article.updated_at) %> <br>
-			<%= image_tag("icons/icon-graph.png", class: "sidebar-icon") %>  <b>Revisions:</b> <%= @article.revisions %> <br>
+			<%= image_tag("icons/icon-tag.png", class: "sidebar-icon") %> <b>Tags:</b> <%= @article.tags %> <em>None</em> <br>
+			<%= image_tag("icons/icon-update.png", class: "sidebar-icon") %> 
+				<b>Revised:</b> 
+				<%= @article.revisions == nil ? "Never" : (prettyTime(@article.updated_at) == prettyTime(Date.today) ? "Today" : prettyTime(@article.updated_at)) %> 
+				<br>
+			<%= image_tag("icons/icon-graph.png", class: "sidebar-icon") %>  <b>Revisions:</b> <%= @article.revisions == nil ? 0 : @article.revisions %> <br>
 			<%= image_tag("icons/icon-public.png", class: "sidebar-icon") %> <b>Public:</b> <%= @article.public %>
 		</div>
 

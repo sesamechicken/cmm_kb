@@ -23,8 +23,12 @@
         <div class="header-controls">
           <ul class="button-group">
            <li><a href="#" class="tiny button success">Login</a></li>
-           <li><%= link_to "New Article", new_article_path, class: "tiny button"  %></li>
-           <li><%= link_to "New Category", new_category_path, class: "tiny button"  %></li>
+           <li><a href="#" data-dropdown="hover1" data-options="is_hover:true" class="tiny button">New</a>
+          <ul id="hover1" class="content f-dropdown" data-dropdown-content>
+            <li><%= link_to "New Article", new_article_path %></li>
+            <li><%= link_to "New Category", new_category_path %></li>
+          </ul>
+          </li>
           </ul>
         </div>
     </div>

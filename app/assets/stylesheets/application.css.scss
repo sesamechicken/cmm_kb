@@ -34,13 +34,13 @@ p a,
 p a:link,
 p a:active,
 p a:visited{ 
-	color: #45548f;
+	color: #263E6E;
 }
 div a,
 div a:link,
 div a:active,
 div a:visited{ 
-	color: #45548f;
+	color: #263E6E;
 }
 .button { color: rgb(255,255,255)!important; }
 .tiny.button { color: rgb(255,255,255)!important; }
@@ -124,10 +124,12 @@ header {
 }
 .global-footer{
 	padding: 30px 10px;
-	background-color: #45548f;
-	color: #93A6F0;
+	background-color: #E4E5EA;
+	color: #A0A0A0;
 	margin-top: 2em;
 	font-size: 90%;
+	box-shadow: 0 0 20px rgba(0,0,0,0.4);
+	border-top: 1px solid #C5C5C5;
 }
 
 

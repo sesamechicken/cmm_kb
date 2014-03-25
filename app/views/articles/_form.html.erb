@@ -30,7 +30,7 @@
       <%= collection_select(:article, :category_id, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
     </div>
     <div class="large-3 columns end">
-       <%= f.label :Visibility %>
+       <%= f.label :Visibility %><br>
       <%= f.check_box :public %><%= f.label :public %>
     </div>
   </div>
@@ -50,6 +50,7 @@
   <div class="row">
     <div class="actions">
     <%= f.submit "Submit", :onclick => 'setEpicValue()', class: "small success button" %>
+    <%= link_to 'Cancel', @article, class: "small alert button" %>
   </div>
   </div>
 
