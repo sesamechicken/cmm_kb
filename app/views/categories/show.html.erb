@@ -3,8 +3,8 @@
 	<h1><%= @category.title %> <span class="round label article-header-count-badge"><%= @category.articles.count %> Articles</span></h1>
 	<p>Showing articles under category <em class="serif"><%= @category.title %></em>.</p>
 </div>
-<% @cat_articles = @category.articles.paginate(:page => params[:page], :per_page => 5) %>
-<% @category.articles.each do |article| %>
+<% cat_articles = @category.articles.paginate(:page => params[:page], :per_page => 5) %>
+<% cat_articles.each do |article| %>
 	<div class="row panel">
 	  <div class="large-12 columns">
 	    <div class="row"><h1><%= link_to article.title, article %></h1></div>
@@ -24,7 +24,7 @@
 
 <div class="row">
   <div class="large-12 columns">
-    <%= will_paginate @cat_articles, :renderer => PaginationListLinkRenderer %>
-    <%= page_entries_info @cat_articles %>
+    <%= will_paginate cat_articles, :renderer => PaginationListLinkRenderer %>
+    <%= page_entries_info cat_articles %>
   </div>
 </div>
