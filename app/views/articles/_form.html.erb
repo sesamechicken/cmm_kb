@@ -29,6 +29,11 @@
       <%= f.label :category_id %>
       <%= collection_select(:article, :category_id, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
     </div>
+    <div class="large-6 columns">
+      <%= f.label :New_Category %>
+      <div class="large-6 columns"><input type="text" name="new_cat" id="new_cat" placeholder="New category..."></div>
+      <div class="large-3 columns end"><a href="#" class="tiny button" onclick="addCategory()">Add new</a></div>
+    </div>
     <div class="large-3 columns end">
        <%= f.label :Visibility %><br>
       <%= f.check_box :public %><%= f.label :public %>
