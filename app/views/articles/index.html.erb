@@ -1,14 +1,14 @@
 <div class="row article-meta">
   <p><%= pluralize(@articles.count, 'article') %> in the kb.</p>
 </div>
-<% @articles = Article.paginate(:page => params[:page], :per_page => 5) %>
+<% @articles = Article.paginate(:page => params[:page], :per_page => 8) %>
 <% @articles.each do |article| %>
 <div class="row panel">
   <div class="large-12 columns">
     <div class="row"><h1><%= link_to article.title, article %></h1></div>
     <div class="row">
       <div class="article-meta">
-      <%= image_tag("icons/icon-category.png", class: "global-icon") %> Category: <%= link_to article.category.title, category_path(article.category), class: "round label success" %> | <%= image_tag("icons/icon-user.png", class: "global-icon") %> Created by: <em><%= article.author %></em> | <%= image_tag("icons/icon-update.png", class: "global-icon") %> Last updated: <%= article.updated_at = Date.today ? "Today" : article.updated_at %><br>
+      <%= image_tag("icons/icon-category.png", class: "global-icon") %> Category: <%= link_to article.category.title, category_path(article.category), class: "round label success" %> | <%= image_tag("icons/icon-user.png", class: "global-icon") %> Created by: <em><%= article.author %></em> | <%= image_tag("icons/icon-update.png", class: "global-icon") %> Last updated: <%= prettyTime(article.updated_at) == prettyTime(Date.today) ? "Today" : prettyTime(article.updated_at) %><br>
       
       </div>
     </div>
@@ -19,8 +19,6 @@
 </div>
 
 <% end %>
-
-
 
 <div class="row">
   <div class="large-12 columns">

@@ -123,7 +123,11 @@ header {
 	clear: both;
 }
 .global-footer{
-
+	padding: 30px 10px;
+	background-color: #45548f;
+	color: #93A6F0;
+	margin-top: 2em;
+	font-size: 90%;
 }
 
 

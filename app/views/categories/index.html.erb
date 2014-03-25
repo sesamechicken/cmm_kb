@@ -2,7 +2,7 @@
 <%= link_to 'New Category', new_category_path, class: 'tiny button' %>
 	<div class="large-8 columns small-centered">
 	
-	<table width="100%">
+	<table>
 		<thead>
 			<tr>
 				<th>Category</th>
@@ -21,7 +21,9 @@
 						<% if category.articles.count == 0 %>
 						<%= link_to category, method: :delete, data: { confirm: 'Are you sure?' } do %><span class="tiny alert button"><%= image_tag("icons/icon-delete.png", class: 'global-icon') %> Delete</span><% end %>
 						<% else %>
-						Re-assign artcles to a differtn cat
+						<span data-tooltip class="has-tip" title="Can't delete category; would orphan articles. Reassign articles to different category first.">
+							<span class="tiny alert button disabled"><%= image_tag("icons/icon-delete.png", class: 'global-icon') %> Delete</span>
+						</span>
 						<% end %> </td>
 				</tr>
 			<% end %>
