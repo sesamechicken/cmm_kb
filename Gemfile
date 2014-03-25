@@ -5,11 +5,14 @@ gem 'rails', '3.2.17'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
+# Fake data
 gem 'faker'
 
 #Parsing markdown syntax
 gem 'redcarpet'
+
+# Pagination
+gem 'will_paginate'
 
 group :production do
   gem 'rails_12factor'
