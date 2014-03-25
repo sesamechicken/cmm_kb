@@ -1,7 +1,8 @@
+<% @articles = Article.paginate(:page => params[:page], :per_page => 10) %>
 <div class="row article-meta">
-  <p><%= pluralize(@articles.count, 'article') %> in the kb.</p>
+  <div class="top-article-count"><div class="pagination-info"><%= page_entries_info @articles %></div></div>
+  <div class="top-article-pagination"><%= will_paginate @articles, :renderer => PaginationListLinkRenderer, :previous_label => '&laquo;', :next_label => '&raquo;' %></div>
 </div>
-<% @articles = Article.paginate(:page => params[:page], :per_page => 8) %>
 <% @articles.each do |article| %>
 <div class="row panel">
   <div class="large-12 columns">
@@ -22,7 +23,7 @@
 
 <div class="row">
   <div class="large-12 columns">
-    <%= will_paginate @articles, :renderer => PaginationListLinkRenderer %>
-    <%= page_entries_info @articles %>
+    <%= will_paginate @articles, :renderer => PaginationListLinkRenderer, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+    <div class="pagination-info"><%= page_entries_info @articles %></div>
   </div>
 </div>

@@ -2,7 +2,7 @@
 <%= form_for(@article) do |f| %>
   <% if @article.errors.any? %>
     <div id="error_explanation" class="alert-box alert">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <p><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</p>
 
       <ul>
       <% @article.errors.full_messages.each do |msg| %>
@@ -19,12 +19,12 @@
     </div>
   </div>
   
-  <div class="row" id="epiceditor">
+  <div class="row" id="epiceditor" style="height: 400px;">
     <%= f.label :body %>
     <%= f.text_area :body, :id => 'body_txt', :cols => 40, :rows => 10 %>
   </div>
 
-  <div class="row">
+  <div class="row article-form-meta">
     <div class="large-3 columns">
       <%= f.label :category_id %>
       <%= collection_select(:article, :category_id, Category.all, :id, :title, options ={:prompt => "Select a category"}) %>
@@ -59,10 +59,6 @@
   </div>
   </div>
 
- 
-
-  <%= f.hidden_field :body, :id => 'article_body'%>
-
-
+ <%= f.hidden_field :body, :id => 'article_body'%>
 
 <% end %>

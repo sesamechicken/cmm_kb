@@ -72,18 +72,11 @@ header {
 }
 
 
-
-.article-avatar{
-	width: 100px;
-	height: 100px;
-	background-image: url(article-default.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	cursor: pointer;
+.pagination-info{
+	margin-bottom: 1em;
 }
-.article-avatar .cmm{
-	background-image: url(article-cmm.png);
-}
+.top-article-count{ float: left; }
+.top-article-pagination{ float: right;}
 .article-meta{ color: #777; line-height: 1.3em;}
 .article-body{
 	margin: 1em 0 1em;
@@ -98,7 +91,13 @@ header {
 	display: inline-table;
 }
 
+
+
+.article-form-meta{ margin-top: 5em !important;}
 .serif{ font-family: 'Georgia', Times, serif;}
+
+
+
 .sidebar-icon{
 	max-width: 28px;
 }
@@ -106,6 +105,10 @@ header {
 	max-width: 16px;
 }
 .panel{background-color: #fff;}
+
+
+
+
 .search-result-wrapper{
 	background-color: #fff;
 	padding: 1em;
@@ -117,6 +120,15 @@ header {
 .search-result h5{
 	margin-bottom: -3px;
 }
+.search-result-date{
+	color: green;
+}
+.search-result-author {
+	font-style: italic;
+	color: #FF5C00;
+}
+
+
 .footer-wrapper{
 	background-color: #fff;
 	padding: 1em;
@@ -126,7 +138,6 @@ header {
 	padding: 30px 10px;
 	background-color: #E4E5EA;
 	color: #A0A0A0;
-	margin-top: 2em;
 	font-size: 90%;
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 	border-top: 1px solid #C5C5C5;

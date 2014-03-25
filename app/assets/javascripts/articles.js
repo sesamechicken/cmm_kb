@@ -37,9 +37,13 @@ function setEpicValue(){
 
 function addCategory(){
 	var new_cat = $('#new_cat').val();
+	if(new_cat){
 	$.post('/categories#create', {'category[title]': new_cat}, function(data){
 		// console.log(data);
 		$('#article_category_id').append('<option value="'+ data.id +'" selected>'+ new_cat +'</option>')
 	}, 'json');
+	}else{
+		alert('Nothing entered.');
+	}
 	
 }

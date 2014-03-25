@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
 
 def search
-  @articles = Article.search params[:search]
+  @articles = Article.search(params[:search], params[:page])
 
   respond_to do |format|
       format.html # index.html.erb

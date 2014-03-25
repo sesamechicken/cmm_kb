@@ -1,16 +1,26 @@
+
 <div class="search-result-wrapper">
+<div class="row">
 <h4>Found <%= pluralize(@articles.count, 'result') %></h4>
 
+<% results = @articles.paginate(:page => params[:page], :per_page => 10) %>
+<div class="pagination-info"><%= page_entries_info results %></div>
 <ul>
-	<% @articles.each do |article| %>
+	<% results.each do |article| %>
 		<li class="search-result">
 			<div class="large-12 columns">
-				<h5><%= link_to article.title, article %></h5>
-				<p><%= truncate(article.body, length: 50) %> <br>
-				<em class="article-meta">Updated <%= article.updated_at %></em></p>
+				<b><%= link_to article.title, article %></b>
+				<p><%= truncate(article.body, length: 200) %> <br>
+				<em class="search-result-date">Updated: <%= prettyTime(article.updated_at) %></em> 
+				<%= link_to article.category.title, article.category, class: 'round success label' %>
+				<span class="search-result-author"><%= article.author%></span></p>
 			</div>
 		</li>
 	<% end %>
 </ul>
 <br style="clear:both;">
+
+<%= will_paginate results, :renderer => PaginationListLinkRenderer, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+<div class="pagination-info"><%= page_entries_info results %></div>
+</div>
 </div>
