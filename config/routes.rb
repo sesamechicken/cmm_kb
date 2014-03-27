@@ -1,7 +1,13 @@
 CmmKb::Application.routes.draw do
 
-  resources :articles
+  resources :articles do
+    collection do
+      get :search
+    end
+  end 
+  resources :categories
 
+  #match 'articles/search' => 'articles#search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -28,9 +34,7 @@ CmmKb::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-resources :categories
-get 'articles/search'
-post 'articles/search'
+
 
   # Sample resource route with sub-resources:
   #   resources :products do
