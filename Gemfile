@@ -43,8 +43,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'epiceditor-rails'
-
+gem 'epic-editor-rails'
 
 
 # To use ActiveModel has_secure_password
