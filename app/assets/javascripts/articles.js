@@ -16,9 +16,9 @@ $(function(){
 			autoSave: 100
 			},
 			theme: {
-			base: 'base/epiceditor.css',
-			preview: 'preview/github.css',
-			editor: 'editor/epic-light.css'
+			base: 'epiceditor.css',
+			preview: 'github.css',
+			editor: 'epic-light.css'
 			},
 		  focusOnLoad: true,
 		  autogrow: true
