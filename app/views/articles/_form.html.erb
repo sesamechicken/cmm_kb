@@ -42,8 +42,8 @@
   
   <div class="row">
      <div class="large-5 columns">
-      <%= f.label :tags %>
-      <%= f.text_field :tags, {class: "large-3 columns", placeholder: "Comma separated (e.g. intranet, salesorder, updating)"} %>
+      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <%= f.text_field :tag_list %>
       </div>
       <div class="large-2 columns end">
       <%= f.label :author %>
