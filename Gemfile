@@ -11,6 +11,9 @@ gem 'faker'
 #Parsing markdown syntax
 gem 'redcarpet'
 
+# Tagging 
+gem 'acts-as-taggable-on' 
+
 # Pagination
 gem 'will_paginate'
 
@@ -24,8 +27,6 @@ end
 
 gem 'sass', '3.2.10'
 #gem 'taps'
-
-
 
 # grab foundation
 gem 'foundation-rails'

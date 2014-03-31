@@ -10,7 +10,9 @@
 	    <div class="row"><h1><%= link_to article.title, article %></h1></div>
 	    <div class="row">
 	      <div class="article-meta">
-	      <%= image_tag("icons/icon-category.png", class: "global-icon") %> Category: <%= link_to article.category.title, category_path(article.category), class: "round label success" %> | <%= image_tag("icons/icon-user.png", class: "global-icon") %> Created by: <em><%= article.author %></em> | <%= image_tag("icons/icon-update.png", class: "global-icon") %> Last updated: <%= article.updated_at = Date.today ? "Today" : article.updated_at %><br>
+	      <%= image_tag("icons/icon-category.png", class: "global-icon") %> Category: <%= link_to article.category.title, category_path(article.category), class: "round label success" %> | 
+	      <%= image_tag("icons/icon-tag.png", class: "global-icon") %> Tags: <%= article.tag_list.count > 0 ? (raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) : raw("<em>None</em>") %> |
+	      <%= image_tag("icons/icon-user.png", class: "global-icon") %> Created by: <em><%= article.author %></em> | <%= image_tag("icons/icon-update.png", class: "global-icon") %> Last updated: <%= article.updated_at = Date.today ? "Today" : article.updated_at %><br>
 	      <!-- Tags: <%= article.tags  %> -->
 	      </div>
 	    </div>

@@ -14,13 +14,6 @@
  *= require_tree .
  */
 
-@import 'base/epiceditor';  
-@import 'preview/bartik';  
-@import 'preview/github';  
-@import 'preview/preview-dark';  
-@import 'editor/epic-dark';  
-@import 'editor/epic-light';  
-
 
  body{
  	/* background-image: url(bkgd.jpg); */
@@ -29,7 +22,7 @@
  }
  .wrapper{ max-width: 1040px; margin: 0 auto; background-color: #fff;}
 
-/* Text styles */
+/* Link styles */
 p a,
 p a:link,
 p a:active,
@@ -42,12 +35,15 @@ div a:active,
 div a:visited{ 
 	color: #263E6E;
 }
+
+/* Button specifics */
 .button { color: rgb(255,255,255)!important; }
 .tiny.button { color: rgb(255,255,255)!important; }
-.center{ text-align: center;}
+
 .centered{ margin: 0 auto;}
 .clear{ clear: both;}
 
+/* Main page elements */
 header {
 	padding: 1em;
 	min-height: 100px;
@@ -71,10 +67,12 @@ header {
 	min-height: 80%;
 }
 
-
+/* Pagination tweak */
 .pagination-info{
 	margin-bottom: 1em;
 }
+
+/* Article specific */
 .top-article-count{ float: left; }
 .top-article-pagination{ float: right;}
 .article-meta{ color: #777; line-height: 1.3em;}
@@ -92,23 +90,24 @@ header {
 }
 
 
-
+/* Text styles */
 .article-form-meta{ margin-top: 5em !important;}
 .serif{ font-family: 'Georgia', Times, serif;}
+.center{ text-align: center;}
 
-
-
-.sidebar-icon{
-	max-width: 28px;
-}
+/* Icons */ 
+.sidebar-icon{ max-width: 28px; }
 .global-icon{
 	max-width: 16px;
+	margin: 0 .2em;
 }
+
+/* Tiny Foundation override */
 .panel{background-color: #fff;}
 
 
 
-
+/* Search results */
 .search-result-wrapper{
 	background-color: #fff;
 	padding: 1em;
@@ -117,18 +116,14 @@ header {
 	list-style: none;
 	clear: both;
 }
-.search-result h5{
-	margin-bottom: -3px;
-}
-.search-result-date{
-	color: green;
-}
+.search-result h5{ margin-bottom: -3px;}
+.search-result-date{ color: green;}
 .search-result-author {
 	font-style: italic;
 	color: #FF5C00;
 }
 
-
+/* Footer */
 .footer-wrapper{
 	background-color: #fff;
 	padding: 1em;

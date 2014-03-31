@@ -18,7 +18,7 @@
 			<%= image_tag("icons/icon-category.png", class: "sidebar-icon") %> <b>Category:</b> <%= link_to Category.find(@article.category).title, category_path(@article.category), class: 'label round success' %> <br>
 			<%= image_tag("icons/icon-clock.png", class: "sidebar-icon") %> <b>Created:</b> <%= prettyTime(@article.created_at) == prettyTime(Date.today) ? "Today" : prettyTime(@article.created_at) %> <br>
 			<%= image_tag("icons/icon-user.png", class: "sidebar-icon") %> <b>Author:</b> <%= @article.author %> <br>
-			<%= image_tag("icons/icon-tag.png", class: "sidebar-icon") %> <b>Tags:</b> <%= @article.tags %> <em>None</em> <br>
+			<%= image_tag("icons/icon-tag.png", class: "sidebar-icon") %> <b>Tags:</b> <%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %><br>
 			<%= image_tag("icons/icon-update.png", class: "sidebar-icon") %> 
 				<b>Revised:</b> 
 				<%= @article.revisions == nil ? "Never" : (prettyTime(@article.updated_at) == prettyTime(Date.today) ? "Today" : prettyTime(@article.updated_at)) %> 

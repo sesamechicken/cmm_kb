@@ -8,8 +8,12 @@ class Article < ActiveRecord::Base
   validates :category_id, presence: true
 
 
-  attr_accessible :author, :body, :public, :title, :category_id, :date, :revisions, :tags
+  attr_accessible :author, :body, :public, :title, :category_id, :date, :revisions, :tag_list
+  acts_as_taggable
+  ActsAsTaggableOn.force_lowercase = true
   belongs_to :category
+
+  
 
   def self.search(search, page)
   	search_string = "%" + search + "%"

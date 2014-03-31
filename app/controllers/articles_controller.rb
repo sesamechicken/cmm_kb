@@ -2,14 +2,19 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
 
-  def index
-    @articles = Article.all(:order => 'created_at DESC')
+def index
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @articles }
-    end
+  if params[:tag]
+    p "YES TAG PARAM"
+    @articles = Article.tagged_with(params[:tag])
+  else
+    @articles = Article.all(:order => 'created_at DESC')
   end
+  respond_to do |format|
+    format.html # index.html.erb
+    format.json { render json: @articles }
+  end
+end
 
 
 
