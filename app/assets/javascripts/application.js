@@ -14,12 +14,13 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
-//= require 'epiceditor' 
+//= require 'epiceditor'
+//= require 'select2.min'
 
 
 $(function(){ 
-	
 	$(document).foundation(); 
-
 });
 
+
+$("#e2").select2({tags: tagArray});

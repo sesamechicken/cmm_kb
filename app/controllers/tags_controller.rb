@@ -1,9 +1,7 @@
 class TagsController < ApplicationController
-  # GET /articles
-def index
-
+  # GET /tags
+def show
   if params[:tag]
-    p "YES TAG PARAM"
     @articles = Article.tagged_with(params[:tag])
   else
     @articles = Article.all(:order => 'created_at DESC')

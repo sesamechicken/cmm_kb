@@ -1,6 +1,7 @@
 CmmKb::Application.routes.draw do
 
-  get 'tags/:tag', to: 'tags#index', as: :tag
+  get 'tags/:tag', to: 'tags#show', as: :tag
+
 
   resources :articles do
     collection do

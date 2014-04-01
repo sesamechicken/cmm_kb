@@ -7,17 +7,13 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validates :category_id, presence: true
 
-
   attr_accessible :author, :body, :public, :title, :category_id, :date, :revisions, :tag_list
   acts_as_taggable
   ActsAsTaggableOn.force_lowercase = true
   belongs_to :category
 
-  
-
   def self.search(search, page)
   	search_string = "%" + search + "%"
-  	#find(:all, :conditions => ['title LIKE ? OR body LIKE ? OR tags LIKE ?', search_string, search_string, search_string])
     conditions = nil
     unless search.blank?
       conditions = ['title LIKE ? OR body LIKE ? OR tags LIKE ?', search_string, search_string, search_string]
