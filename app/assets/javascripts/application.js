@@ -23,4 +23,7 @@ $(function(){
 });
 
 
-$("#e2").select2({tags: tagArray});
+$("#e2").select2({
+	tags: tagArray,
+	tokenSeparators: [",", " "]
+	});
