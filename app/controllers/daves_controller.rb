@@ -1,0 +1,2 @@
+class DavesController < ApplicationController
+end
